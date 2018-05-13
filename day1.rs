@@ -5,7 +5,6 @@ fn main()
 {
     part1();
     part2();
-
 }
 
 fn part1()
@@ -14,7 +13,6 @@ fn part1()
 
     let mut input = String::new();
     input_file.read_to_string(&mut input).expect("Problems with reading string.");
-
         
     let mut nums : Vec<u32> = Vec::new();
 
@@ -31,6 +29,7 @@ fn part1()
             sum = sum + nums[x];
         }
     }
+	
     if nums[nums.len() - 1] == nums[0]
     {
         sum = sum + nums[0];
