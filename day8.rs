@@ -9,9 +9,9 @@ fn main()
     let mut registers : HashMap<String, i32> = HashMap::new();
 
     let buf = BufReader::new(&input_file);
-    let mut input : Vec<String>;
-    let mut instr : Vec<String>;
-    let mut cond  : Vec<String>;
+    let input : Vec<String>;
+    let instr : Vec<String>;
+    let cond  : Vec<String>;
 
     for line in buf.lines()
     {
