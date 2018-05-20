@@ -48,8 +48,8 @@ fn main()
                       };
         match &instr[1][..]
         {
-            //"inc" => {registers.get_mut(&instr[0]).unwrap() += instr[2].clone().parse::<i32>().unwrap() },
-            //"dec" => {*registers.entry(instr[0].clone()) -= instr[2].clone().parse::<i32>().unwrap() }
+            "inc" => {*registers.get_mut(&instr[0]).unwrap() += instr[2].clone().parse::<i32>().unwrap() },
+            "dec" => {*registers.get_mut(&instr[0]).unwrap() -= instr[2].clone().parse::<i32>().unwrap() },
             _ => println!("Instr no match")
         }
         println!("{:?}, {}", registers, is_good);
