@@ -10,5 +10,12 @@ fn main()
 
     //println!("{}", input);
 
+    //let mut test = input.replace("<>", "");
     
+    //println!("{}", test);
+    
+    loop 
+    {
+        break;
+    }
 }
