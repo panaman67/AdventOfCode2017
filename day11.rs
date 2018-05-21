@@ -13,12 +13,10 @@ fn main()
     let mut src : Vec<&str> = input.split(",").collect();
     // create dest vector of strings
     let mut dest : Vec<&str> = Vec::new();
-    // get window iterator over src vector
-
-    //println!("{:?}", src);
-
+    // get chunk iterator over src vector
     for slice in src.chunks(2)
     {
+    // match with collapsable patterns eg. (ne,nw) -> n, or (ne,sw) -> NULL
         //match slice
         //{
         //    &["ne", "nw"] => println!("n"),
@@ -35,7 +33,6 @@ fn main()
         //    &[c] => println!("{}", c)
         //}
     }
-    // match with collapsable patterns eg. (ne,nw) -> n, or (ne,sw) -> NULL
 
     // push each in pattern if no match, else push simplified direction to dest
 
