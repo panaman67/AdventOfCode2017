@@ -63,11 +63,3 @@ fn part2()
     println!("Part 2: {}", sum);
 }
 
-
-
-
-
-
-
-
-

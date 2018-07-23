@@ -41,10 +41,10 @@ fn part1()
        
         let is_good = match &cond[1][..] 
                       {
-                            "<=" => { registers[&cond[0]] <= cond[2].clone().parse::<i32>().unwrap()  },
-                            ">=" => { registers[&cond[0]] >= cond[2].clone().parse::<i32>().unwrap()  },
-                            "==" => { registers[&cond[0]] == cond[2].clone().parse::<i32>().unwrap()  },
-                            "!=" => { registers[&cond[0]] != cond[2].clone().parse::<i32>().unwrap()  },
+                            "<=" => { registers[&cond[0]] <= cond[2].clone().parse::<i32>().unwrap() },
+                            ">=" => { registers[&cond[0]] >= cond[2].clone().parse::<i32>().unwrap() },
+                            "==" => { registers[&cond[0]] == cond[2].clone().parse::<i32>().unwrap() },
+                            "!=" => { registers[&cond[0]] != cond[2].clone().parse::<i32>().unwrap() },
                             ">"  => { registers[&cond[0]] > cond[2].clone().parse::<i32>().unwrap()  },
                             "<"  => { registers[&cond[0]] < cond[2].clone().parse::<i32>().unwrap()  },
                             _    => false
@@ -53,20 +53,18 @@ fn part1()
         {
             match &instr[1][..]
             {
-                "inc" => {*registers.get_mut(&instr[0]).unwrap() += instr[2].clone().parse::<i32>().unwrap() },
-                "dec" => {*registers.get_mut(&instr[0]).unwrap() -= instr[2].clone().parse::<i32>().unwrap() },
+                "inc" => { *registers.get_mut(&instr[0]).unwrap() += instr[2].clone().parse::<i32>().unwrap() },
+                "dec" => { *registers.get_mut(&instr[0]).unwrap() -= instr[2].clone().parse::<i32>().unwrap() },
                 _ => println!("Instr no match")
             }
         }
     }
 
-    let mut largest : String = String::new();
     let mut num : i32 = std::i32::MIN;
-    for (k,v) in registers.iter()
+    for (_,v) in registers.iter()
     {
         if v > &num
         {
-            largest = k.to_owned();
             num = *v;
         }
     }
@@ -85,7 +83,6 @@ fn part2()
     let mut instr : Vec<String>;
     let mut cond  : Vec<String>;
 
-    let mut largest : String = String::new();
     let mut num : i32 = std::i32::MIN;
 
     for line in buf.lines()
@@ -128,11 +125,10 @@ fn part2()
             }
         }
 
-        for (k,v) in registers.iter()
+        for (_,v) in registers.iter()
         {
             if v > &num
             {
-                largest = k.to_owned();
                 num = *v;
             }
         }
