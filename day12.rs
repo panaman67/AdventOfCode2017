@@ -15,16 +15,15 @@ fn part1()
     // create buffer to read the contents from file
     let mut buf = BufReader::new(input_file);
     // output vector
-    let mut output : Vec<usize> = vec![0];
+    let mut output: Vec<usize> = vec![0];
 
     // dictionary to store all the inputs  
-    let mut dict : HashMap<usize, Vec<usize>> = HashMap::new();
+    let mut dict: HashMap<usize, Vec<usize>> = HashMap::new();
 
     // create String variable to store each line of file in
-    let mut line : String;
+    let mut line: String;
 
-    for _ in 0..2000
-    {
+    for _ in 0..2000 {
         // read line from file and store into line variable (String)
         // no assignment as no return value is needed
         line = "".to_owned();
@@ -43,26 +42,21 @@ fn part1()
         let mut pipes : Vec<usize> = Vec::new();
         // iterate throuh the array of values starting at 
         // first pipe (index 1) and add to pipes vector
-        for spot in 1..array.len()
-        {
+        for spot in 1..array.len() {
             pipes.push(array[spot]);
         }
         // insert key-value pair (port, pipes) to dictionary
         dict.insert(array[0], pipes);
     }
 
-    for x in 0..
-    {
-        if x == output.len()
-        {
+    for x in 0.. {
+        if x == output.len() {
             break;
         }
 
         let lol : Vec<usize> = dict[&output[x]].clone();
-        for num in lol.iter()
-        {
-            if !output.contains(num)
-            {
+        for num in lol.iter() {
+            if !output.contains(num) {
                 output.push(*num);
             }
         }
